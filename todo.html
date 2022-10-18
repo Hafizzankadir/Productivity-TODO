@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/todo.css">
+  <link rel="icon" type="image" href="/images/brain.svg">
+
+  <!-- link for icon -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title> Productive with TODO </title>
+
+</head>
+
+<body>
+
+
+  <div class="todo">
+
+    <!-- form value from form page -->
+
+    <div class="form">
+      <p> My Intention : <span id="intention"></span> .</p>
+      <p> After <span id="need"></span>, I will <span id="want"></span> .</p>
+    </div>
+
+    <!-- pomodoro timer -->
+
+    <div class="pomodoro">
+
+      <div class="label">
+        <p id="work">work</p>
+        <p id="break">break</p>
+      </div>
+
+      <div class="timer">
+        <div class="circle">
+          <div class="time">
+            <p id="minutes"></p>
+            <p>:</p>
+            <p id="seconds"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="play">
+        <button id="start" onclick="start()"> <i class="uil uil-caret-right"></i></button>
+        <a id="reset" href="./"><i class="uil uil-redo"></i></a>
+      </div>
+
+    </div>
+
+    <!-- to do input list -->
+
+    <div class="task-input">
+      <input type="text" placeholder="Add your new Priority List">
+    </div>
+
+    <!-- filter -->
+
+    <div class="controls">
+      <div class="filters">
+        <span id="all" class="active">All Task</span>
+        <span id="pending">In Progress</span>
+        <span id="completed">Completed</span>
+      </div>
+      <div class="clear">
+        <button class="clear-btn">Clear</button>
+        <i class="uil uil-arrows-v"></i>
+      </div>
+
+    </div>
+
+    <!-- to do output list -->
+
+    <ul class="task-box"></ul>
+
+  </div>
+
+
+  <!-- get form value from form page -->
+
+  <script>
+    const want = localStorage.getItem('want');
+    const need = localStorage.getItem('need');
+    const intention = localStorage.getItem('intention');
+    document.getElementById('want').textContent = want;
+    document.getElementById('need').textContent = need;
+    document.getElementById('intention').textContent = intention;
+  </script>
+
+  <script src="script/todo.js"></script>
+  <script src="script/timer.js"></script>
+
+</body>
+
+</html>

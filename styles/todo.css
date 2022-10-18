@@ -1,0 +1,212 @@
+/* Font Used = Google Font Poppins */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #202731;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.todo {
+  background: #fff;
+  margin: 100px auto;
+  max-width: 40%;
+  border-radius: 8px;
+  padding: 28px 0;
+}
+
+/* form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: black;
+  background: #fff;
+  padding: 10px 40px;
+  font-size: 17px;
+}
+
+.form span {
+  color: #bb014b;
+}
+
+/* pomodoro timer */
+
+.pomodoro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 5px 40px 20px 40px;
+}
+
+.label {
+  display: flex;
+  font-size: 24px;
+}
+
+.label p {
+  padding: 10px;
+  opacity: 0.2;
+
+}
+
+.label p.active {
+  opacity: 1;
+  color: #bb014b;
+
+}
+
+.circle .time {
+  display: flex;
+  font-size: 24px;
+}
+
+.play button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.play #reset {
+  display: none;
+  font-size: 24px;
+}
+
+/* to do input list */
+
+.task-input {
+  height: 52px;
+  padding: 0 25px;
+}
+
+.task-input input {
+  height: 100%;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+.task-input input::placeholder {
+  color: #bfbfbf;
+  text-align: center;
+}
+
+/* filter */
+
+.controls {
+  display: flex;
+  align-items: center;
+  padding: 18px 25px;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.controls .clear {
+  display: flex;
+  align-items: center;
+}
+
+.controls i {
+  padding: 10px;
+}
+
+.filters span {
+  cursor: pointer;
+  margin: 0 8px;
+  font-size: 17px;
+}
+
+.filters span.active {
+  color: #bb014b;
+}
+
+.controls .clear-btn {
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px 13px;
+  background: #bb014b;
+  border-radius: 4px;
+}
+
+.controls,
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* to do output list */
+
+.task-box {
+  margin: 20px 25px;
+  height: 180px;
+  overflow: auto;
+}
+
+.task-box .task {
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task label {
+  display: flex;
+}
+
+.task label p.checked {
+  text-decoration: line-through;
+}
+
+.task label input {
+  margin-top: 2px;
+  margin-right: 12px;
+}
+
+/* edit & delete setting */
+
+.task .setting {
+  cursor: pointer;
+}
+
+.task-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-menu li {
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.task-menu li {
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.task-menu .trash :hover {
+  color: red;
+}
+
+.task-menu .edit :hover {
+  color: #999;
+}
