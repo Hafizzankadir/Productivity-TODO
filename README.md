@@ -30,6 +30,7 @@
 <br>
 
 <p>Page One :</p>
+
 - Welcoming Page.
 
 <br>
@@ -57,6 +58,8 @@
 <br>
 
 ## ❓ Instructions
+
+<br>
 
 1. On the homepage, users are required to click on “Here” Link to start the website.
 2. Users are required to enter their intention for the Task and the Temptation Bundling in the form given.
