@@ -4,9 +4,9 @@
 
 <p align="center">
     <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-features">Features</a>
-    <a href="#-instructions">Instruction</a>
-    <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-features">Features</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-instructions">Instruction</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-technologies">Technologies</a>
     
     
 </p>
@@ -23,20 +23,22 @@
 <p>This Project is developed to showcase the basic understanding of web programming for the technical test given by Nextacloud Technologies for the position of Junior Developer.</p>
 <p>The idea of this project is from the concept of Task Management to improve productivity with TODO List.</p>
 
-<br><br>
+<br>
 
 ## 🧾 Features
-
-** The Website Page is divided into 3 Pages : **
 
 <br>
 
 <p>Page One :</p>
 - Welcoming Page.
 
+<br>
+
 <p>Page Two :</p>
 
 - Form Features of Intention and Temptation Bundling Input.
+
+<br>
 
 <p>Page Three :</p>
 
@@ -52,8 +54,9 @@
     - Delete the List
     - Delete all List
 
+<br>
 
-## ❓ Instruction
+## ❓ Instructions
 
 1. On the homepage, users are required to click on “Here” Link to start the website.
 2. Users are required to enter their intention for the Task and the Temptation Bundling in the form given.
