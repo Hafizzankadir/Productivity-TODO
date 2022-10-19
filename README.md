@@ -17,20 +17,23 @@
 <br><hr>
 
 ## 📚 Project
-<p>This project was developed to practice logic and DOM manipulation.</p>
-<p>Of course, it's not the best project ever, but I did my best. As this project is on Youtube, I can't modify the code.</p>
-<a href="https://www.youtube.com/watch?v=sYFR4NJkrFc&t=523s">Check my video</a>
+<p>This Project is developed to showcase the basic understanding of web programming for the technical test given by Nextacloud Technologies for the position of Junior Developer.</p>
+<p>The idea of this project is from the concept of Task Management to improve productivity with TODO List.</p>
 
 <br><br>
 
 ## 🖥 Technologies
-  * [Html](https://www.w3schools.com/html/)
-  * [Css](https://www.w3schools.com/css/)
-  * [Javascript](https://www.javascripttutorial.net/)
+  * Html
+  * Css
+  * Javascript
 
 <br>
 
 ## 🧾 Features
+
+<p> The Website Page is divided into 3 Pages : </p>
+s
+
 - [x] Work time = 25 minutes
 - [x] Break time = 5 minutes
 - [x] Timer reset button
