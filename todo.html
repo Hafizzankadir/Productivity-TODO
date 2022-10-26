@@ -11,77 +11,109 @@
   <!-- link for icon -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-  <title> Productive with TODO </title>
+
+  <title>Productivity TODO</title>
 
 </head>
 
 <body>
 
+  <div class="app">
 
-  <div class="todo">
+    <aside>
 
-    <!-- form value from form page -->
-
-    <div class="form">
-      <p> My Intention : <span id="intention"></span> .</p>
-      <p> After <span id="need"></span>, I will <span id="want"></span> .</p>
-    </div>
-
-    <!-- pomodoro timer -->
-
-    <div class="pomodoro">
-
-      <div class="label">
-        <p id="work">work</p>
-        <p id="break">break</p>
+      <div class="date">
+        <form class="date-form">
+          <input type="date" class="date-input">
+          <button type="submit">Add Date <i class="uil uil-calendar-alt"></i></button>
+        </form>
       </div>
 
-      <div class="timer">
-        <div class="circle">
-          <div class="time">
-            <p id="minutes"></p>
-            <p>:</p>
-            <p id="seconds"></p>
+      <div class="all-date">
+        <h1>All Date</h1>
+        <ul class="date-output"></ul>
+      </div>
+
+    </aside>
+
+    <main>
+
+      <header>
+
+        <div class="header">
+
+          <div class="form">
+            <p> My Intention : <span id="intention"></span> .</p>
+            <p> After <span id="need"></span>, I will <span id="want"></span> .</p>
           </div>
+
+          <div class="pomodoro">
+            <div class="label">
+              <p id="work">work</p>
+              <p id="work_minutes" class="time"></p>
+              <span>:</span>
+              <p id="work_seconds" class="time"></p>
+
+              <p id="break" class="label">break</p>
+              <p id="break_minutes" class="time"></p>
+              <span>:</span>
+              <p id="break_seconds" class="time"></p>
+            </div>
+            <div class="play">
+
+              <button id="start"> <i class="uil uil-caret-right"></i></button>
+              <a id="pause"><i class="uil uil-pause"></i></a>
+              <button id="reset"> <i class="uil uil-redo"></i></button>
+            </div>
+
+          </div>
+
         </div>
-      </div>
 
-      <div class="play">
-        <button id="start" onclick="start()"> <i class="uil uil-caret-right"></i></button>
-        <a id="reset" href="./"><i class="uil uil-redo"></i></a>
-      </div>
 
-    </div>
+        <div class="task-input">
+          <select class="data-new-todo-select">
 
-    <!-- to do input list -->
+          </select>
+          <input type="text" placeholder="Enter Todo">
+        </div>
 
-    <div class="task-input">
-      <input type="text" placeholder="Add your new Priority List">
-    </div>
+      </header>
 
-    <!-- filter -->
+      <section class="todos-container">
 
-    <div class="controls">
-      <div class="filters">
-        <span id="all" class="active">All Task</span>
-        <span id="pending">In Progress</span>
-        <span id="completed">Completed</span>
-      </div>
-      <div class="clear">
-        <button class="clear-btn">Clear</button>
-        <i class="uil uil-arrows-v"></i>
-      </div>
+        <div class="controls">
 
-    </div>
+          <div class="filters">
+            <span id="all" class="active">All Task</span>
+            <span id="pending">In Progress</span>
+            <span id="completed">Completed</span>
+          </div>
 
-    <!-- to do output list -->
+          <div class="clear">
+            <button class="clear-btn">Clear</button>
+            <i class="uil uil-arrows-v"></i>
+          </div>
 
-    <ul class="task-box"></ul>
+        </div>
+
+        <!-- to do output list -->
+
+        <ul class="task-box"></ul>
+  </div>
+
 
   </div>
 
 
-  <!-- get form value from form page -->
+  </div>
+  </section>
+
+
+  </main>
+
+
+  </div>
 
   <script>
     const want = localStorage.getItem('want');
@@ -92,8 +124,10 @@
     document.getElementById('intention').textContent = intention;
   </script>
 
-  <script src="script/todo.js"></script>
+
   <script src="script/timer.js"></script>
+  <script src="script/todo.js"></script>
+
 
 </body>
 
