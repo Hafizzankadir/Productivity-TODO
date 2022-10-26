@@ -12,6 +12,8 @@ body{
   height: 100vh;
   overflow: hidden;
   background-color: #202731;
+  align-items: center;
+  justify-content:center;
 }
 
 .wrapper{
@@ -29,7 +31,7 @@ form{
   width: 100vh;
 }
 
-input[type=text] {
+input {
   width: 23%;
   padding: 12px 4px;
   margin: 8px 10px;
@@ -42,7 +44,7 @@ input[type=text] {
 }
 
 
-input[type=text]:focus{
+input:focus{
   outline: none;
 }
 
@@ -57,4 +59,9 @@ button{
   background: #bb014b;
   border-radius: 4px;
   margin-top: 27px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
 }
