@@ -1,52 +1,127 @@
-const taskInput = document.querySelector(".task-input input"),
-  filters = document.querySelectorAll(".filters span"),
-  clearAll = document.querySelector(".clear-btn"),
-  taskBox = document.querySelector(".task-box");
+const taskInput = document.querySelector(".task-input input");
+const newDateForm = document.querySelector(".date-form");
+const newDateInput = document.querySelector(".date-input");
+const newtodoSelect = document.querySelector(".data-new-todo-select");
+
+filters = document.querySelectorAll(".filters span"),
+clearAll = document.querySelector(".clear-btn"),
+taskBox = document.querySelector(".task-box"),
+dateBox = document.querySelector(".date-output");
 
 let editId;
 let isEditedTask = false;
 
-// saving the priority list to local storage
+let dates = [];
 
-taskInput.addEventListener("keyup", e => {
 
-  // to prevent user from submitting empty value
+// * date function
+
+// get date input
+
+newDateForm.addEventListener("submit", (e) => {
+
+  e.preventDefault();
+
+  const date = newDateInput.value;
+
+  const isDateEmpty = !date || !date.trim().length;
+
+  if (isDateEmpty) {
+    return alert("please enter a date");
+  }
+
+  let dateInfo = {
+    _id: Date.now().toString(),
+    date: date
+  };
+
+  dates.push(dateInfo); 
+
+  newDateInput.value = "";
+
+  localStorage.setItem("date-list", JSON.stringify(dates));
+
+});
+
+// show list of all date
+
+let dateInfo = JSON.parse(localStorage.getItem("date-list"));
+
+function showDate() {
+  let li = "";
+  if (dateInfo) {
+    dateInfo.forEach((date, id) => {
+      li += `          <li class="date-output">
+        <label for="${id}">
+          <input type="checkbox">
+          <p class="${completed}">${date.date}</p>
+        </label>
+        <div class="settings">
+          <ul class="task-menu">
+            <li class="edit"><i class="uil uil-pen"></i></li>
+            <li class="trash"><i class="uil uil-trash"></i></li>
+          </ul>
+        </div>
+      </li>`;
+    });
+  }
+  dateBox.innerHTML = li;
+}
+showDate();
+
+
+// add date to select option
+
+function option() {
+  newtodoSelect.innerHTML += `<option value="">Select A Date</option>`;
+
+  if (dateInfo) {
+    dateInfo.forEach(({
+      date,
+      _id
+    }) => {
+      newtodoSelect.innerHTML += `<option value=${_id}>${date}</option>`;
+    });
+  }
+
+}
+option();
+
+// * todo function
+
+//  get todo 
+
+taskInput.addEventListener("keyup", (e) => {
+
+  e.preventDefault();
 
   let userTask = taskInput.value.trim();
 
   if (e.key == "Enter" && userTask) {
-
     if (!isEditedTask) {
-      todos = !todos ? [] : todos; //if todos not exist, pass empty array to todo
+      todos = !todos ? [] : todos;
       let taskInfo = {
         name: userTask,
-        status: "pending"
+        status: "pending",
       };
-      todos.push(taskInfo); // add new list to To Do
+      todos.push(taskInfo);
     } else {
       isEditedTask = false;
       todos[editId].name = userTask;
     }
 
-    // parse the local storage data to js object
-
     taskInput.value = "";
 
-    //convert data into string for local storage
-  
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showTodo(document.querySelector("span.active").id);
-    
   }
 });
-
-// getting local storage todo-list
 
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 
 // filter features
 
-filters.forEach(btn => {
+filters.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector("span.active").classList.remove("active");
     btn.classList.add("active");
@@ -79,12 +154,15 @@ function showTodo(filter) {
   }
   taskBox.innerHTML = liTag || `<span>You don't have any task here</span>`;
   let checkTask = taskBox.querySelectorAll(".task");
-  !checkTask.length ? clearAll.classList.remove("active") : clearAll.classList.add("active");
-  taskBox.offsetHeight >= 300 ? taskBox.classList.add("overflow") : taskBox.classList.remove("overflow");
+  !checkTask.length ?
+    clearAll.classList.remove("active") :
+    clearAll.classList.add("active");
+  taskBox.offsetHeight >= 300 ?
+    taskBox.classList.add("overflow") :
+    taskBox.classList.remove("overflow");
 }
 
 showTodo();
-
 
 // edit selected task from the list
 
@@ -96,7 +174,6 @@ function editTask(taskId, taskName) {
   taskInput.classList.add("active");
 }
 
-
 // delete selected task from the list
 
 function deleteTask(deleteId, filter) {
@@ -106,10 +183,9 @@ function deleteTask(deleteId, filter) {
   showTodo(filter);
 }
 
-// update status checkbox 
+// update status checkbox
 
 function updateStatus(selectedTask) {
-
   // get string that contains task name, which in this case task name is equal to the paragraph (lastElementChild)
   let taskName = selectedTask.parentElement.lastElementChild;
 
@@ -124,14 +200,13 @@ function updateStatus(selectedTask) {
   localStorage.setItem("todo-list", JSON.stringify(todos));
 }
 
-
 //clear all Function
 
 clearAll.addEventListener("click", () => {
   isEditTask = false;
   todos.splice(0, todos.length);
   localStorage.setItem("todo-list", JSON.stringify(todos));
-  showTodo()
+  showTodo();
 });
 
 
