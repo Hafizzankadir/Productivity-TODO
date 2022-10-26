@@ -22,12 +22,18 @@
     <form id="form">
 
       <h2>Use the Power of Temptation Bundling</h2><br>
-      <p>After <input type="text" id="need" placeholder="THE THING I NEED TO DO" required> I will,<input type="text"
-          id="want" placeholder="THE THING I WANT TO DO" required> .</p>
+      <p>After <input type="text" id="need" placeholder="THE THING I NEED TO DO"> I will,<input type="text"
+          id="want" placeholder="THE THING I WANT TO DO"> .</p>
       <br>
       <h2>State your Intention</h2>
       <input type="text" id="intention" placeholder="WHY AM I DOING THIS ?" required>
       <br>
+      <br>
+      <h2>Set Your Focus Timer</h2>
+      <div class="timer">
+     <input type="number" placeholder="Work In Minutes" id="workTime">
+     <input type="number" placeholder="Break In Minutes" id="breakTime">
+      </div>
       <button type="submit">Next <i class="uil uil-arrow-right"></i></button>
 
     </form>
@@ -39,6 +45,8 @@
       const need = document.getElementById('need');
       const want = document.getElementById('want');
       const intention = document.getElementById('intention');
+      const workTime = document.getElementById('workTime');
+      const breakTime = document.getElementById('breakTime');
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -46,13 +54,18 @@
         const needValue = need.value;
         const wantValue = want.value;
         const intentionValue = intention.value;
+        const workTimeValue = workTime.value;
+        const breakTimeValue = breakTime.value;
         localStorage.setItem('need', needValue);
         localStorage.setItem('want', wantValue);
         localStorage.setItem('intention', intentionValue);
+        localStorage.setItem('workTime', workTimeValue);
+        localStorage.setItem('breakTime', breakTimeValue);
 
         window.location.href = "todo.html";
       })
     </script>
+    <script src="timer.js"></script>
 
   </div>
 
